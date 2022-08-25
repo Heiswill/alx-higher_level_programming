@@ -1,11 +1,6 @@
 #!/usr/bin/python3
-import hidden_4
-
-def defcomp():
-    name = dir(hidden_4)
-    for i in name:
-        if i[:2] != '__':
-            print("{}".format(i))
-
 if __name__ == "__main__":
-    defcomp()
+    import hidden_4
+    for entry in dir(hidden_4):
+        if entry[0] != '_':
+            print("{}".format(entry))
