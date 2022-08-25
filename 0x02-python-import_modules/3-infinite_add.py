@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+
 def add_arg(args):
     
     num = len(args) - 1
@@ -12,5 +14,4 @@ def add_arg(args):
         print("{}".format(Sum))
 
 if __name__ == "__main__":
-    import sys
     add_arg(sys.argv)
