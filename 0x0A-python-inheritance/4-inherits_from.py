@@ -2,6 +2,7 @@
 """Define a function that inherits directly/indirect
 from a specified class"""
 
+
 def inherits_from(obj, a_class):
     """Check it object is an instance of a class that
     inherited directly/indirectly from a specified class.

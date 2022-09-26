@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines an BaseGeometry class."""
 
+
 class BaseGeometry:
     """Add public instance methods."""
     def area(self):
