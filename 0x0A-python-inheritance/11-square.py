@@ -7,10 +7,7 @@ class Square(Rectangle):
     """Square class"""
     def __init__(self, size):
         self.__size = size
-        BaseGeometry.integer_validator(self, "size", self.__size)
-
-    def area(self):
-        return self.__size ** 2
+        super().__init__(self.__size, self.__size)
 
     def __str__(self):
         '''print'''
