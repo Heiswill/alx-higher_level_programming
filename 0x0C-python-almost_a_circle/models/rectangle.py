@@ -93,7 +93,6 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
 
-
     def to_dictionary(self):
         '''
             Returns a dictionary representation of this class
@@ -122,5 +121,3 @@ class Rectangle(Base):
             self.y = args[4]
         except IndexError:
             pass
-
-

@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a base class for other tasks."""
 import json
+import csv
 
 
 class Base:
@@ -30,9 +31,6 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ Write the JSON string representation of list_objs to a file."""
-        @classmethod
-    def save_to_file(cls, list_objs):
         '''
             Writes the string representation of an object of a class
             into a file
@@ -49,9 +47,37 @@ class Base:
         with open(file_name, mode="w") as fd:
             json.dump(content, fd)
 
-    def create(cls,**dictionary):
+    def create(cls, **dictionary):
         """ returns an instance with all attributes already set."""
-        pass
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls.__name__ == "Rectangle":
+            r2 = Rectangle(3, 8)
+        elif cls.__name__ == "Square":
+            r2 = Square(5)
+        r2.update(**dictionary)
+        return (r2)
+
+    @classmethod
+    def load_from_file(cls):
+        '''
+            loading dict representing the parameters for
+            and instance and from that creating instances
+        '''
+        file_name = cls.__name__ + ".json"
+
+        try:
+            with open(file_name, encoding="UTF8") as fd:
+                content = cls.from_json_string(fd.read())
+        except Exception:
+            return []
+
+        instances = []
+
+        for instance in content:
+            tmp = cls.create(**instance)
+            instances.append(tmp)
 
     @staticmethod
     def draw(list_rectangle, list_square):
@@ -96,5 +122,3 @@ class Base:
             turtle.goto(x_cordinate + move_by, 100)
 
         turtle.exitonclick()
-
-
