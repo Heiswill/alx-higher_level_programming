@@ -18,4 +18,4 @@ if __name__ == "__main__":
     for i in db:
         print(i)
     cursor.close()
-    db.close()
+    con.close()
