@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+'''
+A script that lists all nstates from the database htbn_0e_0_usa.
+'''
+
 
 from sys import argv
 import MySQLdb
